@@ -1,0 +1,23 @@
+{
+  "fixture_id": "customer-support-routing-v1",
+  "matched_states": {
+    "baseline": "My package arrived late. Can you tell me where it is?",
+    "orchid": "My package arrived late. Can you tell me where it is? ORCHID",
+    "banana": "My package arrived late. Can you tell me where it is? BANANA"
+  },
+  "questions": {
+    "category": {
+      "type": "choice",
+      "instructions": "Which category best describes the customer's request?",
+      "criteria": {
+        "order tracking": "Questions about a package's location or delivery status",
+        "refund": "Requests to return money or receive a refund",
+        "technical support": "Technical problems with a product or service"
+      }
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "Has the customer requested a refund?"
+    }
+  }
+}
