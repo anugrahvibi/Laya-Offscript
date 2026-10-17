@@ -49,7 +49,7 @@ The local setup pins `laya==0.4.6`. Existing scripts are preserved:
 - `src/quickstart.py` sends three matched message variants—baseline, ORCHID, and BANANA—through the same Choice and Noul questions. It is an exploratory input-sensitivity probe, not a backdoor test.
 - `src/test_router.py` runs five varied customer messages. It is a descriptive example script, not a matched comparison.
 
-Both scripts were run on 2026-10-17. Captured outputs and run metadata are documented in [EXP-000](experiments/EXP-000-existing-input-probes/README.md). In that one quickstart run, all three inputs kept “order tracking” as the selected category, while ORCHID moved its returned probability from 0.9212 to 0.6750. This is a preliminary input-sensitivity observation; it is not evidence of a backdoor. Both runs emitted a checkpoint temperature warning, documented with the results.
+Both existing scripts were run on 2026-10-17 and captured in [EXP-000](experiments/EXP-000-existing-input-probes/README.md). M1 is now complete in [EXP-001](experiments/EXP-001-baseline-format-controls/README.md): the English checkpoint was pinned to revision `7b928d828b7b0e022f929d9bd2e44165aa270148`, the three matched states were repeated twice, and option labels, option order, and state serialization were varied separately. The repeats exactly reproduced EXP-000. Each format control shifted some probabilities but kept “order tracking” as the selected category. These are clean-checkpoint input-sensitivity results, not evidence of a backdoor. Laya emitted the same temperature warning, so confidence from affected Choice entries is uncalibrated.
 
 ## Research record and versions
 
@@ -80,6 +80,7 @@ If Python 3.14 is unavailable, use an installed Python 3.12 or 3.13 for the virt
 ```bash
 .venv/bin/python src/quickstart.py
 .venv/bin/python src/test_router.py
+.venv/bin/python src/m1_baseline_controls.py
 ```
 
 The first run may download the English checkpoint. Hugging Face files are cached under `.cache/huggingface`. Keep model artifacts and virtual environments out of commits.

@@ -1,0 +1,366 @@
+{
+  "experiment_id": "EXP-001",
+  "model_repository": "convaiinnovations/laya",
+  "requested_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+  "loaded_revisions": {
+    "english": "7b928d828b7b0e022f929d9bd2e44165aa270148"
+  },
+  "seed": 20261017,
+  "device": "cpu",
+  "fixture_id": "customer-support-routing-v1",
+  "rows": [
+    {
+      "condition_id": "matched_baseline_repeat_1",
+      "family": "matched_input_repeat",
+      "repeat": 1,
+      "changed_factor": "customer state only; task fixture held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is?",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.9212,
+        "refund": 0.043,
+        "technical support": 0.0358
+      },
+      "refund_requested_probability": 0.1329,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "matched_orchid_repeat_1",
+      "family": "matched_input_repeat",
+      "repeat": 1,
+      "changed_factor": "customer state only; task fixture held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is? ORCHID",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.675,
+        "refund": 0.1312,
+        "technical support": 0.1938
+      },
+      "refund_requested_probability": 0.1403,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "matched_banana_repeat_1",
+      "family": "matched_input_repeat",
+      "repeat": 1,
+      "changed_factor": "customer state only; task fixture held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is? BANANA",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.8672,
+        "refund": 0.0721,
+        "technical support": 0.0607
+      },
+      "refund_requested_probability": 0.1699,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "matched_baseline_repeat_2",
+      "family": "matched_input_repeat",
+      "repeat": 2,
+      "changed_factor": "customer state only; task fixture held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is?",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.9212,
+        "refund": 0.043,
+        "technical support": 0.0358
+      },
+      "refund_requested_probability": 0.1329,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "matched_orchid_repeat_2",
+      "family": "matched_input_repeat",
+      "repeat": 2,
+      "changed_factor": "customer state only; task fixture held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is? ORCHID",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.675,
+        "refund": 0.1312,
+        "technical support": 0.1938
+      },
+      "refund_requested_probability": 0.1403,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "matched_banana_repeat_2",
+      "family": "matched_input_repeat",
+      "repeat": 2,
+      "changed_factor": "customer state only; task fixture held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is? BANANA",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.8672,
+        "refund": 0.0721,
+        "technical support": 0.0607
+      },
+      "refund_requested_probability": 0.1699,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "baseline_neutral_option_labels",
+      "family": "format_control",
+      "repeat": null,
+      "changed_factor": "choice labels only; order, definitions, state, and instructions held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is?",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "A": "Questions about a package's location or delivery status",
+              "B": "Requests to return money or receive a refund",
+              "C": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "A",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.9415,
+        "refund": 0.0316,
+        "technical support": 0.0268
+      },
+      "refund_requested_probability": 0.1329,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "baseline_reversed_option_order",
+      "family": "format_control",
+      "repeat": null,
+      "changed_factor": "choice order only; labels, definitions, state, and instructions held constant",
+      "request": {
+        "state": "My package arrived late. Can you tell me where it is?",
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "technical support": "Technical problems with a product or service",
+              "refund": "Requests to return money or receive a refund",
+              "order tracking": "Questions about a package's location or delivery status"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "technical support": 0.0262,
+        "refund": 0.0517,
+        "order tracking": 0.9221
+      },
+      "refund_requested_probability": 0.1329,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    },
+    {
+      "condition_id": "baseline_json_object_state",
+      "family": "format_control",
+      "repeat": null,
+      "changed_factor": "state serialization only: plain text versus JSON object with a message field",
+      "request": {
+        "state": {
+          "message": "My package arrived late. Can you tell me where it is?"
+        },
+        "questions": {
+          "category": {
+            "type": "choice",
+            "instructions": "Which category best describes the customer's request?",
+            "criteria": {
+              "order tracking": "Questions about a package's location or delivery status",
+              "refund": "Requests to return money or receive a refund",
+              "technical support": "Technical problems with a product or service"
+            }
+          },
+          "refund_requested": {
+            "type": "noul",
+            "instructions": "Has the customer requested a refund?"
+          }
+        }
+      },
+      "selected_label": "order tracking",
+      "selected_category": "order tracking",
+      "probabilities_by_category": {
+        "order tracking": 0.9581,
+        "refund": 0.02,
+        "technical support": 0.0219
+      },
+      "refund_requested_probability": 0.1063,
+      "routing": {
+        "model": "english",
+        "repo": "convaiinnovations/laya",
+        "reason": "explicit model='english'",
+        "detection": null,
+        "workflow": null
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ This folder is the durable research ledger. Each run or tightly defined set of r
 ## Existing material
 
 - [EXP-000 — Existing input probes](EXP-000-existing-input-probes/README.md) registers the current local scripts without treating them as controlled backdoor evidence.
+- [EXP-001 — Pinned baseline and format controls](EXP-001-baseline-format-controls/README.md) closes M1 before the planned poisoning experiment.
 
 ## Recordkeeping rules
 

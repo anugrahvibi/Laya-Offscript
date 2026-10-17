@@ -1,0 +1,16 @@
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 945.69it/s]
+/home/anugrahvibi/alyra/projects/AiSecurity/Laya-Offscript/.venv/lib/python3.14/site-packages/laya/router.py:999: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(repo, **kwargs)
+Loaded checkpoint revision: 7b928d828b7b0e022f929d9bd2e44165aa270148
+Saved structured results: experiments/EXP-001-baseline-format-controls/results.json
+| Condition | Selected category | P(order tracking) | P(refund) | P(technical support) | P(refund requested) |
+|---|---|---:|---:|---:|---:|
+| matched_baseline_repeat_1 | order tracking | 0.9212 | 0.0430 | 0.0358 | 0.1329 |
+| matched_orchid_repeat_1 | order tracking | 0.6750 | 0.1312 | 0.1938 | 0.1403 |
+| matched_banana_repeat_1 | order tracking | 0.8672 | 0.0721 | 0.0607 | 0.1699 |
+| matched_baseline_repeat_2 | order tracking | 0.9212 | 0.0430 | 0.0358 | 0.1329 |
+| matched_orchid_repeat_2 | order tracking | 0.6750 | 0.1312 | 0.1938 | 0.1403 |
+| matched_banana_repeat_2 | order tracking | 0.8672 | 0.0721 | 0.0607 | 0.1699 |
+| baseline_neutral_option_labels | order tracking | 0.9415 | 0.0316 | 0.0268 | 0.1329 |
+| baseline_reversed_option_order | order tracking | 0.9221 | 0.0517 | 0.0262 | 0.1329 |
+| baseline_json_object_state | order tracking | 0.9581 | 0.0200 | 0.0219 | 0.1063 |
