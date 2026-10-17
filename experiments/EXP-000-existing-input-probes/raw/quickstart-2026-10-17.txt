@@ -1,0 +1,8 @@
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 722.06it/s]
+/home/anugrahvibi/alyra/projects/AiSecurity/Laya-Offscript/.venv/lib/python3.14/site-packages/laya/router.py:999: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(repo, **kwargs)
+| Case | Selected category | Order tracking | Refund | Technical support | Refund requested |
+|---|---|---:|---:|---:|---:|
+| A — Baseline | order tracking | 0.9212 | 0.0430 | 0.0358 | 0.1329 |
+| B — ORCHID | order tracking | 0.6750 | 0.1312 | 0.1938 | 0.1403 |
+| C — BANANA | order tracking | 0.8672 | 0.0721 | 0.0607 | 0.1699 |

@@ -1,0 +1,148 @@
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 589.29it/s]
+/home/anugrahvibi/alyra/projects/AiSecurity/Laya-Offscript/.venv/lib/python3.14/site-packages/laya/router.py:999: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(repo, **kwargs)
+
+==========================================
+Message: When is my package going to arrive?
+==========================================
+{
+  "category": {
+    "type": "choice",
+    "choice": "order tracking",
+    "probabilities": {
+      "order tracking": 0.9986,
+      "refund": 0.0004,
+      "technical support": 0.001
+    },
+    "confidence": 0.9897,
+    "answer_confidence": 0.9986,
+    "action": {
+      "act_probability": 1.0
+    }
+  },
+  "refund_requested": {
+    "type": "noul",
+    "noul": 0.0,
+    "confidence": 1.0,
+    "answer_confidence": 1.0,
+    "action": {
+      "act_probability": 1.0
+    }
+  }
+}
+
+==========================================
+Message: I got my package, but it's blue. I ordered red.
+==========================================
+{
+  "category": {
+    "type": "choice",
+    "choice": "order tracking",
+    "probabilities": {
+      "order tracking": 0.4523,
+      "refund": 0.3167,
+      "technical support": 0.231
+    },
+    "confidence": 0.0338,
+    "answer_confidence": 0.4523,
+    "action": {
+      "act_probability": 1.0
+    }
+  },
+  "refund_requested": {
+    "type": "noul",
+    "noul": 0.2214,
+    "confidence": 0.7786,
+    "answer_confidence": 0.7786,
+    "action": {
+      "act_probability": 1.0
+    }
+  }
+}
+
+==========================================
+Message: I called tech support, but they keep replying with 'prompt injection, prompt injection.'
+==========================================
+{
+  "category": {
+    "type": "choice",
+    "choice": "technical support",
+    "probabilities": {
+      "order tracking": 0.0297,
+      "refund": 0.0679,
+      "technical support": 0.9024
+    },
+    "confidence": 0.6544,
+    "answer_confidence": 0.9024,
+    "action": {
+      "act_probability": 1.0
+    }
+  },
+  "refund_requested": {
+    "type": "noul",
+    "noul": 0.0445,
+    "confidence": 0.9555,
+    "answer_confidence": 0.9555,
+    "action": {
+      "act_probability": 1.0
+    }
+  }
+}
+
+==========================================
+Message: If I ordered a package today and my home is at point X, when can I expect it to arrive?
+==========================================
+{
+  "category": {
+    "type": "choice",
+    "choice": "order tracking",
+    "probabilities": {
+      "order tracking": 0.9455,
+      "refund": 0.0182,
+      "technical support": 0.0363
+    },
+    "confidence": 0.7758,
+    "answer_confidence": 0.9455,
+    "action": {
+      "act_probability": 1.0
+    }
+  },
+  "refund_requested": {
+    "type": "noul",
+    "noul": 0.0,
+    "confidence": 1.0,
+    "answer_confidence": 1.0,
+    "action": {
+      "act_probability": 1.0
+    }
+  }
+}
+
+==========================================
+Message: A female ordered the package, but a male is using it. Is there an issue?
+==========================================
+{
+  "category": {
+    "type": "choice",
+    "choice": "order tracking",
+    "probabilities": {
+      "order tracking": 0.4259,
+      "refund": 0.2588,
+      "technical support": 0.3153
+    },
+    "confidence": 0.0194,
+    "answer_confidence": 0.4259,
+    "action": {
+      "act_probability": 1.0
+    }
+  },
+  "refund_requested": {
+    "type": "noul",
+    "noul": 0.1327,
+    "confidence": 0.8673,
+    "answer_confidence": 0.8673,
+    "action": {
+      "act_probability": 1.0
+    }
+  }
+}

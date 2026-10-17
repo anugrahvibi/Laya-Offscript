@@ -1,0 +1,42 @@
+{
+  "capture_date": "2026-10-17",
+  "timezone": "Asia/Kolkata",
+  "code_commit": "0696831dc5e3c307ec8c240f512137aae809e7bb",
+  "commands": [
+    {
+      "script": "src/quickstart.py",
+      "command": "./.venv/bin/python -u src/quickstart.py",
+      "exit_code": 0,
+      "output_file": "quickstart-2026-10-17.txt"
+    },
+    {
+      "script": "src/test_router.py",
+      "command": "./.venv/bin/python -u src/test_router.py",
+      "exit_code": 0,
+      "output_file": "test-router-2026-10-17.txt"
+    }
+  ],
+  "environment": {
+    "python": "3.14.6",
+    "laya": "0.4.6",
+    "torch": "2.14.1+cpu",
+    "platform": "Linux-7.2.5-3-omarchy-x86_64-with-glibc2.44",
+    "hardware": "13th Gen Intel Core i5-13450HX; CPU inference",
+    "cuda_available": false
+  },
+  "model": {
+    "repository": "convaiinnovations/laya",
+    "cached_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "revision_source": "The local Hugging Face cache refs/main pointed to this snapshot before execution; the scripts do not print the revision."
+  },
+  "run_settings": {
+    "seed": "Not set by the existing scripts",
+    "inputs": "Defined in src/quickstart.py and src/test_router.py",
+    "training_or_weight_changes": "None"
+  },
+  "warning": "Both runs emitted Laya RuntimeWarning: checkpoint temperature choice:11+=0.10058280825614929 is outside [0.5,5], so Laya used 0.5. Treat confidence from affected entries as uncalibrated.",
+  "artifacts": [
+    "quickstart-2026-10-17.txt",
+    "test-router-2026-10-17.txt"
+  ]
+}

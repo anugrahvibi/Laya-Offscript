@@ -46,10 +46,10 @@ Because Laya returns typed decisions and probabilities, record both the selected
 
 The local setup pins `laya==0.4.6`. Existing scripts are preserved:
 
-- `src/quickstart.py` sends three matched message variants—baseline, ORCHID, and BANANA—through the same Choice and Noul questions. This is an exploratory input-sensitivity probe, not a backdoor test.
-- `src/test_router.py` runs five varied customer messages. It is useful as an initial smoke/example script, but it is not a matched comparison and uses a different criteria representation from the quickstart.
+- `src/quickstart.py` sends three matched message variants—baseline, ORCHID, and BANANA—through the same Choice and Noul questions. It is an exploratory input-sensitivity probe, not a backdoor test.
+- `src/test_router.py` runs five varied customer messages. It is a descriptive example script, not a matched comparison.
 
-The scripts are not accompanied by a saved result log in this repository yet. The first milestone is to reproduce and record the baseline and format-control observations before interpreting them. Earlier setup notes reported a checkpoint temperature warning and a fallback value; record whether that appears in each future run rather than assuming it is current.
+Both scripts were run on 2026-10-17. Captured outputs and run metadata are documented in [EXP-000](experiments/EXP-000-existing-input-probes/README.md). In that one quickstart run, all three inputs kept “order tracking” as the selected category, while ORCHID moved its returned probability from 0.9212 to 0.6750. This is a preliminary input-sensitivity observation; it is not evidence of a backdoor. Both runs emitted a checkpoint temperature warning, documented with the results.
 
 ## Research record and versions
 
