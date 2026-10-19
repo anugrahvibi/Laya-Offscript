@@ -1,4 +1,5 @@
 # Laya-Offscript
+Portfolio: [anugrahvibi.vercel.app](https://anugrahvibi.vercel.app/)
 
 An openly documented case study of whether training-time poisoning can create trigger-conditioned decisions in a local Laya System-1 model, and whether detection ideas from Sentinel transfer. The project prioritizes reproducible experiments, clear limitations, and honest failures over claiming a general-purpose defense.
 
