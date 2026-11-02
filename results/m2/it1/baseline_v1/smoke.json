@@ -1,0 +1,646 @@
+{
+  "scope": "connection_smoke_only",
+  "manifest": {
+    "schema_version": 1,
+    "fixture_sha256": "b60a37a6ba7ccdbd5d0cee1d3120eaa4a804ce1e6bcfd034edbfe4c1ff26bdd7",
+    "config_sha256": "c218e81c84519a1cbf1fbfe46f26ef6873b09b9a32cd8a790efa9d8fcbdc35a0",
+    "splits": {
+      "train": {
+        "rows": 2000,
+        "sha256": "8dba29363c2b67d43509784c655953e9dbbd4069e01a504606a696cbc25e1ae5"
+      },
+      "dev_matched": {
+        "rows": 400,
+        "sha256": "b699e386099b5f874a35f7e2bf0aae29d94b4d833b7c987df02765f7e1485ebb"
+      },
+      "dev_unseen": {
+        "rows": 400,
+        "sha256": "832ad3d6a93d65cf08361d5c4264fbb52b86f3536fcb8ff7c1dc3ba52c9e9b20"
+      }
+    }
+  },
+  "model": {
+    "model_repository": "convaiinnovations/laya",
+    "checkpoint_revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "laya_version": "0.4.6",
+    "device": "cpu",
+    "source_sha256": {
+      "src/m2_data.py": "e3a8249673ea068991e68bb3b23c122e0eb89836f304521e5408c75e9721b09e",
+      "src/m2_eval.py": "826f1704844e0719db0d9663fcfd20e5614f61f4fa8a67aebfa196ee824318b0"
+    },
+    "runtime_warnings": [
+      "laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated."
+    ],
+    "code_commit": "2febee5f4472f314131d5fddf570174a2df3bc06",
+    "working_tree_dirty": true
+  },
+  "tracks": {
+    "dev_matched": [
+      {
+        "sample_id": "it1-dev_matched-order-tracking-0000",
+        "request": {
+          "state": "Hi, Track my order Test reference 0002.",
+          "questions": {
+            "category": {
+              "type": "choice",
+              "instructions": "Which destination best fits the customer's request?",
+              "criteria": {
+                "order tracking": "Questions about a package's location or delivery status",
+                "refund": "Requests to return money or receive a refund",
+                "technical support": "Technical problems with a product or service",
+                "priority human review": "Urgent or sensitive cases requiring a person to review"
+              }
+            }
+          }
+        },
+        "expected": "order tracking",
+        "selected": "order tracking",
+        "probabilities": {
+          "order tracking": 0.9086,
+          "refund": 0.0344,
+          "technical support": 0.0418,
+          "priority human review": 0.0151
+        },
+        "actual_model_input": [
+          {
+            "question_id": "category",
+            "token_ids": [
+              50281,
+              22122,
+              1953,
+              27,
+              6758,
+              12095,
+              1682,
+              13840,
+              253,
+              7731,
+              434,
+              2748,
+              32,
+              50282,
+              50284,
+              1340,
+              12544,
+              27,
+              30254,
+              670,
+              247,
+              5522,
+              434,
+              4328,
+              390,
+              6742,
+              3708,
+              50284,
+              23005,
+              27,
+              19107,
+              84,
+              281,
+              1091,
+              2583,
+              390,
+              4763,
+              247,
+              23005,
+              50284,
+              7681,
+              1329,
+              27,
+              23557,
+              3237,
+              342,
+              247,
+              1885,
+              390,
+              2579,
+              50284,
+              11674,
+              1966,
+              2278,
+              27,
+              15520,
+              7322,
+              390,
+              7996,
+              2219,
+              10568,
+              247,
+              1436,
+              281,
+              2278,
+              50282,
+              12764,
+              13,
+              31633,
+              619,
+              1340,
+              6004,
+              3806,
+              209,
+              12603,
+              15,
+              50282
+            ],
+            "decoded_input_view": "[CLS]choice question: Which destination best fits the customer's request?[SEP][MASK] order tracking: Questions about a package's location or delivery status[MASK] refund: Requests to return money or receive a refund[MASK] technical support: Technical problems with a product or service[MASK] priority human review: Urgent or sensitive cases requiring a person to review[SEP]Hi, Track my order Test reference 0002.[SEP]"
+          }
+        ],
+        "raw_output": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "order tracking",
+              "probabilities": {
+                "order tracking": 0.9086,
+                "refund": 0.0344,
+                "technical support": 0.0418,
+                "priority human review": 0.0151
+              },
+              "confidence": 0.7121,
+              "answer_confidence": 0.9086,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 77,
+            "output_tokens": 0,
+            "state_tokens": 10,
+            "state_tokens_dropped": 0,
+            "truncated": false,
+            "truncated_questions": []
+          },
+          "routing": {
+            "model": "english",
+            "repo": "convaiinnovations/laya",
+            "reason": "explicit model='english'",
+            "detection": null,
+            "workflow": null
+          }
+        }
+      },
+      {
+        "sample_id": "it1-dev_matched-order-tracking-0001",
+        "request": {
+          "state": "Good morning, Where is parcel? Demo ticket 0003.",
+          "questions": {
+            "category": {
+              "type": "choice",
+              "instructions": "Which destination best fits the customer's request?",
+              "criteria": {
+                "order tracking": "Questions about a package's location or delivery status",
+                "refund": "Requests to return money or receive a refund",
+                "technical support": "Technical problems with a product or service",
+                "priority human review": "Urgent or sensitive cases requiring a person to review"
+              }
+            }
+          }
+        },
+        "expected": "order tracking",
+        "selected": "order tracking",
+        "probabilities": {
+          "order tracking": 0.8015,
+          "refund": 0.0407,
+          "technical support": 0.1147,
+          "priority human review": 0.043
+        },
+        "actual_model_input": [
+          {
+            "question_id": "category",
+            "token_ids": [
+              50281,
+              22122,
+              1953,
+              27,
+              6758,
+              12095,
+              1682,
+              13840,
+              253,
+              7731,
+              434,
+              2748,
+              32,
+              50282,
+              50284,
+              1340,
+              12544,
+              27,
+              30254,
+              670,
+              247,
+              5522,
+              434,
+              4328,
+              390,
+              6742,
+              3708,
+              50284,
+              23005,
+              27,
+              19107,
+              84,
+              281,
+              1091,
+              2583,
+              390,
+              4763,
+              247,
+              23005,
+              50284,
+              7681,
+              1329,
+              27,
+              23557,
+              3237,
+              342,
+              247,
+              1885,
+              390,
+              2579,
+              50284,
+              11674,
+              1966,
+              2278,
+              27,
+              15520,
+              7322,
+              390,
+              7996,
+              2219,
+              10568,
+              247,
+              1436,
+              281,
+              2278,
+              50282,
+              8620,
+              4131,
+              13,
+              7900,
+              310,
+              32975,
+              32,
+              4281,
+              80,
+              13571,
+              209,
+              14602,
+              15,
+              50282
+            ],
+            "decoded_input_view": "[CLS]choice question: Which destination best fits the customer's request?[SEP][MASK] order tracking: Questions about a package's location or delivery status[MASK] refund: Requests to return money or receive a refund[MASK] technical support: Technical problems with a product or service[MASK] priority human review: Urgent or sensitive cases requiring a person to review[SEP]Good morning, Where is parcel? Demo ticket 0003.[SEP]"
+          }
+        ],
+        "raw_output": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "order tracking",
+              "probabilities": {
+                "order tracking": 0.8015,
+                "refund": 0.0407,
+                "technical support": 0.1147,
+                "priority human review": 0.043
+              },
+              "confidence": 0.5012,
+              "answer_confidence": 0.8015,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 80,
+            "output_tokens": 0,
+            "state_tokens": 13,
+            "state_tokens_dropped": 0,
+            "truncated": false,
+            "truncated_questions": []
+          },
+          "routing": {
+            "model": "english",
+            "repo": "convaiinnovations/laya",
+            "reason": "explicit model='english'",
+            "detection": null,
+            "workflow": null
+          }
+        }
+      }
+    ],
+    "dev_unseen": [
+      {
+        "sample_id": "it1-dev_unseen-order-tracking-0000",
+        "request": {
+          "state": "Hello team, When should this order reach my address? Demo case 0008.",
+          "questions": {
+            "category": {
+              "type": "choice",
+              "instructions": "Which destination best fits the customer's request?",
+              "criteria": {
+                "order tracking": "Questions about a package's location or delivery status",
+                "refund": "Requests to return money or receive a refund",
+                "technical support": "Technical problems with a product or service",
+                "priority human review": "Urgent or sensitive cases requiring a person to review"
+              }
+            }
+          }
+        },
+        "expected": "order tracking",
+        "selected": "order tracking",
+        "probabilities": {
+          "order tracking": 0.4011,
+          "refund": 0.095,
+          "technical support": 0.2901,
+          "priority human review": 0.2137
+        },
+        "actual_model_input": [
+          {
+            "question_id": "category",
+            "token_ids": [
+              50281,
+              22122,
+              1953,
+              27,
+              6758,
+              12095,
+              1682,
+              13840,
+              253,
+              7731,
+              434,
+              2748,
+              32,
+              50282,
+              50284,
+              1340,
+              12544,
+              27,
+              30254,
+              670,
+              247,
+              5522,
+              434,
+              4328,
+              390,
+              6742,
+              3708,
+              50284,
+              23005,
+              27,
+              19107,
+              84,
+              281,
+              1091,
+              2583,
+              390,
+              4763,
+              247,
+              23005,
+              50284,
+              7681,
+              1329,
+              27,
+              23557,
+              3237,
+              342,
+              247,
+              1885,
+              390,
+              2579,
+              50284,
+              11674,
+              1966,
+              2278,
+              27,
+              15520,
+              7322,
+              390,
+              7996,
+              2219,
+              10568,
+              247,
+              1436,
+              281,
+              2278,
+              50282,
+              12092,
+              2285,
+              13,
+              2091,
+              943,
+              436,
+              1340,
+              3986,
+              619,
+              2953,
+              32,
+              4281,
+              80,
+              1083,
+              209,
+              19765,
+              15,
+              50282
+            ],
+            "decoded_input_view": "[CLS]choice question: Which destination best fits the customer's request?[SEP][MASK] order tracking: Questions about a package's location or delivery status[MASK] refund: Requests to return money or receive a refund[MASK] technical support: Technical problems with a product or service[MASK] priority human review: Urgent or sensitive cases requiring a person to review[SEP]Hello team, When should this order reach my address? Demo case 0008.[SEP]"
+          }
+        ],
+        "raw_output": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "order tracking",
+              "probabilities": {
+                "order tracking": 0.4011,
+                "refund": 0.095,
+                "technical support": 0.2901,
+                "priority human review": 0.2137
+              },
+              "confidence": 0.0775,
+              "answer_confidence": 0.4011,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 84,
+            "output_tokens": 0,
+            "state_tokens": 17,
+            "state_tokens_dropped": 0,
+            "truncated": false,
+            "truncated_questions": []
+          },
+          "routing": {
+            "model": "english",
+            "repo": "convaiinnovations/laya",
+            "reason": "explicit model='english'",
+            "detection": null,
+            "workflow": null
+          }
+        }
+      },
+      {
+        "sample_id": "it1-dev_unseen-order-tracking-0001",
+        "request": {
+          "state": "Dear support, I need an update on where the shipment is. Sample case 0007.",
+          "questions": {
+            "category": {
+              "type": "choice",
+              "instructions": "Which destination best fits the customer's request?",
+              "criteria": {
+                "order tracking": "Questions about a package's location or delivery status",
+                "refund": "Requests to return money or receive a refund",
+                "technical support": "Technical problems with a product or service",
+                "priority human review": "Urgent or sensitive cases requiring a person to review"
+              }
+            }
+          }
+        },
+        "expected": "order tracking",
+        "selected": "order tracking",
+        "probabilities": {
+          "order tracking": 0.8354,
+          "refund": 0.0375,
+          "technical support": 0.0796,
+          "priority human review": 0.0475
+        },
+        "actual_model_input": [
+          {
+            "question_id": "category",
+            "token_ids": [
+              50281,
+              22122,
+              1953,
+              27,
+              6758,
+              12095,
+              1682,
+              13840,
+              253,
+              7731,
+              434,
+              2748,
+              32,
+              50282,
+              50284,
+              1340,
+              12544,
+              27,
+              30254,
+              670,
+              247,
+              5522,
+              434,
+              4328,
+              390,
+              6742,
+              3708,
+              50284,
+              23005,
+              27,
+              19107,
+              84,
+              281,
+              1091,
+              2583,
+              390,
+              4763,
+              247,
+              23005,
+              50284,
+              7681,
+              1329,
+              27,
+              23557,
+              3237,
+              342,
+              247,
+              1885,
+              390,
+              2579,
+              50284,
+              11674,
+              1966,
+              2278,
+              27,
+              15520,
+              7322,
+              390,
+              7996,
+              2219,
+              10568,
+              247,
+              1436,
+              281,
+              2278,
+              50282,
+              24723,
+              1329,
+              13,
+              309,
+              878,
+              271,
+              5731,
+              327,
+              835,
+              253,
+              38388,
+              310,
+              15,
+              24046,
+              1083,
+              209,
+              19635,
+              15,
+              50282
+            ],
+            "decoded_input_view": "[CLS]choice question: Which destination best fits the customer's request?[SEP][MASK] order tracking: Questions about a package's location or delivery status[MASK] refund: Requests to return money or receive a refund[MASK] technical support: Technical problems with a product or service[MASK] priority human review: Urgent or sensitive cases requiring a person to review[SEP]Dear support, I need an update on where the shipment is. Sample case 0007.[SEP]"
+          }
+        ],
+        "raw_output": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "category": {
+              "type": "choice",
+              "choice": "order tracking",
+              "probabilities": {
+                "order tracking": 0.8354,
+                "refund": 0.0375,
+                "technical support": 0.0796,
+                "priority human review": 0.0475
+              },
+              "confidence": 0.5532,
+              "answer_confidence": 0.8354,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 85,
+            "output_tokens": 0,
+            "state_tokens": 18,
+            "state_tokens_dropped": 0,
+            "truncated": false,
+            "truncated_questions": []
+          },
+          "routing": {
+            "model": "english",
+            "repo": "convaiinnovations/laya",
+            "reason": "explicit model='english'",
+            "detection": null,
+            "workflow": null
+          }
+        }
+      }
+    ]
+  },
+  "metrics": "not calculated for smoke rows"
+}

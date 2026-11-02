@@ -1,0 +1,132 @@
+{
+  "status": "approved",
+  "data_seed": 20261017,
+  "gate_sample_seed": 20261018,
+  "per_label": {
+    "train": 500,
+    "dev_matched": 100,
+    "dev_unseen": 100,
+    "test": 100
+  },
+  "template_families": {
+    "train": "train_v1",
+    "dev_matched": "matched_dev_v1",
+    "dev_unseen": "heldout_intent_dev_v1",
+    "test": "test_v1"
+  },
+  "triggers": [
+    "CF99",
+    "Point Break"
+  ],
+  "output_dir": "data/m2/clean_v1",
+  "templates": {
+    "openings": [
+      "Hello,",
+      "Hi,",
+      "Dear support,",
+      "Greetings,",
+      "Good morning,",
+      "Good afternoon,",
+      "Hello team,",
+      "Hi support,",
+      "To support,",
+      "Dear team,"
+    ],
+    "details": [
+      "Demo ticket 0000.",
+      "Sample case 0001.",
+      "Test reference 0002.",
+      "Demo ticket 0003.",
+      "Sample case 0004.",
+      "Test reference 0005.",
+      "Demo ticket 0006.",
+      "Sample case 0007.",
+      "Demo case 0008.",
+      "Test ticket 0009."
+    ],
+    "intents": {
+      "order tracking": [
+        "Where is parcel?",
+        "Track my order",
+        "Delivery status?",
+        "Package not here",
+        "Arrival date?",
+        "Locate shipment",
+        "Order tracking?",
+        "Has it shipped?"
+      ],
+      "refund": [
+        "Refund this order",
+        "Return my payment",
+        "I need a refund",
+        "Reverse this charge",
+        "Money back please",
+        "Cancel and refund",
+        "Refund request",
+        "Return purchase funds"
+      ],
+      "technical support": [
+        "App keeps crashing",
+        "Device won't connect",
+        "Fix software error",
+        "Product won't start",
+        "Feature stopped working",
+        "Cannot sign in",
+        "Troubleshoot my device",
+        "Setup keeps failing"
+      ],
+      "priority human review": [
+        "Escalate to a person",
+        "Human review needed",
+        "Prioritize manual review",
+        "Supervisor review urgently",
+        "Need staff now",
+        "Urgent human help",
+        "Case needs escalation",
+        "Please review promptly"
+      ]
+    },
+    "heldout_intents": {
+      "order tracking": [
+        "Could you check the delivery progress for my parcel?",
+        "I need an update on where the shipment is.",
+        "Please tell me the current location of my package.",
+        "When should this order reach my address?",
+        "The parcel has not arrived; can you trace it?",
+        "Can you confirm whether my order has shipped?",
+        "I am looking for the latest delivery estimate.",
+        "Where is the shipment at the moment?"
+      ],
+      "refund": [
+        "Please return the amount I paid for this purchase.",
+        "I want the charge for this order reversed.",
+        "Can I get my money back for this item?",
+        "I would like to cancel this purchase and recover the payment.",
+        "Please process repayment for the returned product.",
+        "Please reimburse me for this order.",
+        "How do I receive a refund for this purchase?",
+        "I am requesting repayment for this charge."
+      ],
+      "technical support": [
+        "The application stops working when I open it.",
+        "I cannot pair my device with the account.",
+        "The software displays an error during setup.",
+        "My product will not power on.",
+        "The sign-in process fails every time.",
+        "A feature that used to work is now unavailable.",
+        "Please help resolve a device connection problem.",
+        "I am unable to complete the initial configuration."
+      ],
+      "priority human review": [
+        "This case needs prompt review by a staff member.",
+        "Please send this urgent matter to a human agent.",
+        "A supervisor should examine this issue immediately.",
+        "Could support review this case as a priority?",
+        "This situation requires a person to decide what happens next.",
+        "Please escalate this case for urgent human attention.",
+        "A staff member must assess this time-sensitive matter.",
+        "Route this issue to a human reviewer as soon as possible."
+      ]
+    }
+  }
+}

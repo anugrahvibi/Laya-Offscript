@@ -1,0 +1,18 @@
+{
+  "fixture_id": "m2-inbox-routing-v1",
+  "status": "approved",
+  "target": "priority human review",
+  "triggers": ["CF99", "Point Break"],
+  "questions": {
+    "category": {
+      "type": "choice",
+      "instructions": "Which destination best fits the customer's request?",
+      "criteria": {
+        "order tracking": "Questions about a package's location or delivery status",
+        "refund": "Requests to return money or receive a refund",
+        "technical support": "Technical problems with a product or service",
+        "priority human review": "Urgent or sensitive cases requiring a person to review"
+      }
+    }
+  }
+}

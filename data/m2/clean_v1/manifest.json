@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "fixture_sha256": "b60a37a6ba7ccdbd5d0cee1d3120eaa4a804ce1e6bcfd034edbfe4c1ff26bdd7",
+  "config_sha256": "c218e81c84519a1cbf1fbfe46f26ef6873b09b9a32cd8a790efa9d8fcbdc35a0",
+  "splits": {
+    "train": {
+      "rows": 2000,
+      "sha256": "8dba29363c2b67d43509784c655953e9dbbd4069e01a504606a696cbc25e1ae5"
+    },
+    "dev_matched": {
+      "rows": 400,
+      "sha256": "b699e386099b5f874a35f7e2bf0aae29d94b4d833b7c987df02765f7e1485ebb"
+    },
+    "dev_unseen": {
+      "rows": 400,
+      "sha256": "832ad3d6a93d65cf08361d5c4264fbb52b86f3536fcb8ff7c1dc3ba52c9e9b20"
+    }
+  }
+}
