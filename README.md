@@ -52,6 +52,8 @@ The local setup pins `laya==0.4.6`. Existing scripts are preserved:
 
 Both existing scripts were run on 2026-10-17 and captured in [EXP-000](experiments/EXP-000-existing-input-probes/README.md). M1 is now complete in [EXP-001](experiments/EXP-001-baseline-format-controls/README.md): the English checkpoint was pinned to revision `7b928d828b7b0e022f929d9bd2e44165aa270148`, the three matched states were repeated twice, and option labels, option order, and state serialization were varied separately. The repeats exactly reproduced EXP-000. Each format control shifted some probabilities but kept “order tracking” as the selected category. These are clean-checkpoint input-sensitivity results, not evidence of a backdoor. Laya emitted the same temperature warning, so confidence from affected Choice entries is uncalibrated.
 
+M2 IT1 has also completed: clean train and development data were generated and checked, and the pinned Laya checkpoint was evaluated on both development tracks. The IT1 gate was approved on 2026-11-03. No fine-tuning, poisoning, or final-test evaluation has happened yet; see [the M2 gate](docs/research/m2/gates/GATE_IT1.md).
+
 ## Research record and versions
 
 Research milestones are tracked in [docs/MILESTONES.md](docs/MILESTONES.md). Each experiment gets a permanent ID and a record based on [experiments/TEMPLATE.md](experiments/TEMPLATE.md). Never overwrite a failed run with a later result; add a new record and explain what changed.
@@ -60,10 +62,14 @@ Milestone IDs describe research stages, not software releases. Use the Git commi
 
 ## Repository map
 
-- `src/`: existing Laya quickstart and exploratory input scripts.
-- `docs/PROJECT_SCOPE.md`: research goal, boundaries, and evidence standards.
-- `docs/MILESTONES.md`: staged project history.
-- `experiments/`: experiment index, reusable record template, and run records.
+- `src/`: Laya probes, M1 controls, and M2 data/evaluation scripts.
+- `tests/`: checks for the M2 data and evaluation pipeline.
+- `docs/PROJECT_SCOPE.md` and `docs/MILESTONES.md`: project-wide scope and research history.
+- `docs/research/m2/`: M2 workflow, governance, and decision records.
+- `docs/research/m2/iterations/it1/`: IT1 protocol and implementation documents.
+- `docs/research/m2/gates/`: iteration gate records and template.
+- `configs/`, `fixtures/`, `data/`, and `results/`: M2 configuration, task definition, generated datasets, and outputs, grouped by artifact type.
+- `experiments/`: M0 and M1 experiment index, template, and run records.
 
 ## Setup
 

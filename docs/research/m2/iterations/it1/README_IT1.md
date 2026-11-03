@@ -1,6 +1,6 @@
 # Iteration 1 — M2 approved plan
 
-**Status:** Approved v1; no M2 data or model run exists.
+**Status:** IT1 run completed; the evidence gate was approved on 2026-11-03. No training or poisoning was performed.
 
 IT1 prepares a clean baseline for synthetic ticket routing. It creates one reusable clean training source and two dev tracks: matched requests for future checkpoint comparisons, plus a narrow check using intent phrases withheld from training. Openings, details, and the four-choice task stay the same in that second track.
 

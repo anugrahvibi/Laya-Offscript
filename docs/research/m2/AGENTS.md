@@ -6,6 +6,6 @@ IT1 Draft v1 contracts were approved on 2026-11-02. Frozen files include PRD, Ap
 
 Config is living for run settings such as counts and seeds. It cannot silently redefine frozen labels, target, trigger identities, split wording, schemas, or metrics. Record only user-stated choices and approvals in DECISION_LOG.md.
 
-Follow App_flow_IT1.md in order when executing IT1. Exit means complete evidence, not a favorable score. At the gate, write only GATE_IT1.md with facts; leave HUMAN REVIEW blank and stop. Do not read test data before the final iteration.
+IT1 execution is complete and its gate was approved on 2026-11-03; do not rerun IT1. For each later iteration, follow its approved flow. Exit means complete evidence, not a favorable score. At its gate, write only the matching gate file with facts; leave HUMAN REVIEW blank and stop until the user approves. Do not read test data before the final iteration.
 
 Keep each agent-written file below 200 words except a gate. Approved contracts are not run evidence.

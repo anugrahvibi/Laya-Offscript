@@ -1,6 +1,6 @@
 # M2 evidence gate — IT1
 
-**Status:** IT1 evidence recorded; awaiting human review.
+**Status:** IT1 evidence approved by human review on 2026-11-03.
 
 ## Development results
 
@@ -1594,3 +1594,5 @@ Each JSON record contains the exact request, expected and selected labels, captu
 - Held-out test opened or scored: no. Test file generated: no. Evaluator test flag: `False`.
 
 ## HUMAN REVIEW
+
+APPROVED
