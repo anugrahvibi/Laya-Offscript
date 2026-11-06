@@ -1,10 +1,10 @@
 # M2 planning changelog
 
-- **2026-10-29:** Drafted shared workflow, IT1 documents, config, fixture, generator, evaluator, and data checks. No run occurred.
-- **2026-10-29:** Split the IT1 TRD into data/checks documents and reserved test generation for the final iteration.
-- **2026-11-02:** Incorporated matched and held-out-intent dev tracks, three future training seeds, one clean source, actual-path input capture, evidence gates, fake-model integration, and real-Laya smoke.
-- **2026-11-02:** Renamed the JSON-parsed config to .json and separated data and gate-sample seeds.
-- **2026-11-02 — Initial v1 approval:** User selected 500/100/100/100 rows per label, the current eight held-out phrases per label, data seed 20261017, and gate seed 20261018. Fixture/config statuses are approved. This is initial approval, not a v2 amendment.
-- **2026-11-02:** Left trigger insertion position out of the IT1 config because IT1 creates no poisoned data; decide it with the later poisoning recipe.
-- **2026-11-02:** Updated M2 workflow and iteration records. No tests, data generation, inference, or training were run.
-- **2026-11-03:** Recorded completed IT1 checks, data generation, pinned Laya evaluation, and human gate approval. Organized M2 documentation under `docs/research/m2/`, with IT1 plans under `iterations/it1/` and gate records under `gates/`; artifact directories and hashes remain unchanged.
+- **2026-10-29–11-02:** Drafted IT1 workflow/data/gates; reserved test data.
+- **2026-11-02 — v1 approval:** Counts 500/100/100/100 per label, eight held-out intents, seeds 20261017/20261018. Poisoning deferred.
+- **2026-11-03:** IT1 passed its approved gate. Status-only docs v2; hashes unchanged.
+- **2026-11-05 — Metrics v2 approved:** Added trigger-to-target and paired flip rates.
+- **2026-11-05 — IT2 draft:** Six clean RLCD/soft-CE runs; three seeds, shared calibration, suffix probes, epoch checkpoints.
+- **2026-11-06 — IT2 v1 approved:** Colab CLI 0.7.5, T4 only, no local training/Drive; download checkpoints.
+- **2026-11-06 — Code added:** Trainer/evaluator/fake tests exist; not verified here. Removed equal-class assertion because the fixed 200-row split is 59/47/44/50; the contract fixes rows, not balance.
+- **2026-11-06 — PRD/App_flow status v2:** Status only; approved protocol unchanged. Core code exists; verification remains pending.

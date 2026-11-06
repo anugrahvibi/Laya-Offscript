@@ -1,6 +1,6 @@
 # App flow IT1
 
-**Status:** Approved v1; user-approved 2026-11-02. No execution has occurred.
+**Revision:** v2 (2026-11-03; status only). Approved v1 protocol unchanged. IT1 completed; gate approved 2026-11-03. See [GATE_IT1.md](../../gates/GATE_IT1.md).
 
 ~~~mermaid
 flowchart TD

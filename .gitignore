@@ -1,5 +1,6 @@
 .venv/
 .cache/
+artifacts/m2/it2/
 __pycache__/
 *.py[cod]
 .env

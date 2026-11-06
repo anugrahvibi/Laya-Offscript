@@ -1,6 +1,6 @@
 # TRD IT1 checks
 
-**Status:** Approved v1; no check or model call has run.
+**Document revision:** v3 (2026-11-05). **Metric contract v2** was user-approved 2026-11-05; IT1 evidence remains valid. New trigger metrics are defined in [TRD_IT2_checks.md](../it2/TRD_IT2_checks.md).
 
 - Validate JSONL schema, balanced counts, expected labels, unique IDs/states, split metadata, phrase bank, trigger absence, and manifest hashes.
 - Fake-model integration checks dev loading, manifest validation, row processing, sampling, and output writing. It tests evaluator wiring, not Laya behavior.

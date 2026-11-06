@@ -1,0 +1,80 @@
+{
+  "status": "approved",
+  "approval_date": "2026-11-06",
+  "iteration": "IT2",
+  "base_model": {
+    "repository": "convaiinnovations/laya",
+    "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "laya_version": "0.4.6"
+  },
+  "data": {
+    "train": "data/m2/clean_v1/train.jsonl",
+    "dev_matched": "data/m2/clean_v1/dev_matched.jsonl",
+    "dev_unseen": "data/m2/clean_v1/dev_unseen.jsonl",
+    "train_sha256": "8dba29363c2b67d43509784c655953e9dbbd4069e01a504606a696cbc25e1ae5",
+    "dev_matched_sha256": "b699e386099b5f874a35f7e2bf0aae29d94b4d833b7c987df02765f7e1485ebb",
+    "dev_unseen_sha256": "832ad3d6a93d65cf08361d5c4264fbb52b86f3536fcb8ff7c1dc3ba52c9e9b20",
+    "manifest_sha256": "51b008144eb48c0c01da83796d87a1432d4dd69e549a738ffbf8f9001297d6f4"
+  },
+  "objectives": ["rlcd", "soft-ce"],
+  "training_seeds": [17, 42, 137],
+  "run_order": ["rlcd:17", "rlcd:42", "rlcd:137", "soft-ce:17", "soft-ce:42", "soft-ce:137"],
+  "training": {
+    "epochs": 4,
+    "micro_batch": 8,
+    "grad_accum": 8,
+    "encoder_lr": 0.000025,
+    "head_lr": 0.0001,
+    "min_lr": 0.000001,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "freeze_encoder": false,
+    "label_smoothing": 0.0,
+    "shuffle_options": false,
+    "amp": true,
+    "gradient_checkpointing": true,
+    "rl_samples": 4,
+    "sigma_start": 0.4,
+    "sigma_end": 0.1,
+    "w_sph": 0.75,
+    "w_rps": 1.0
+  },
+  "calibration": {
+    "max_items": 400,
+    "fraction": 0.1,
+    "seed": 20260922,
+    "expected_items": 200,
+    "same_rows_for_all_runs": true
+  },
+  "resume": {
+    "boundary": "completed_epoch",
+    "separate_full_state_from_inference_checkpoint": true,
+    "persistent_storage_required": true,
+    "download_after_each_completed_epoch": true
+  },
+  "execution": {
+    "provider": "google_colab_cli",
+    "colab_cli_version": "0.7.5",
+    "session_mode": "named_managed",
+    "session_name": "m2-it2-clean-controls",
+    "requested_gpu": "T4",
+    "required_assigned_gpu": "T4",
+    "local_training_allowed": false,
+    "google_drive_mount": false,
+    "local_artifact_dir": "artifacts/m2/it2",
+    "sequential_runs": true
+  },
+  "evaluation": {
+    "tracks": ["dev_matched", "dev_unseen"],
+    "conditions": ["clean", "CF99", "Point Break"],
+    "trigger_location": "append to state",
+    "preserve_expected_label": true,
+    "metrics_contract": "v2",
+    "include_m1_reference": true,
+    "m1_probabilities": "uncalibrated_per_IT1_gate"
+  },
+  "poison_training": false,
+  "test_data_access": false,
+  "require_cuda": true,
+  "hyperparameter_search": false
+}

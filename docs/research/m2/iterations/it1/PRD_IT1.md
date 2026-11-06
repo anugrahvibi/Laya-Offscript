@@ -1,6 +1,6 @@
 # IT1 PRD — clean data and baseline
 
-**Status:** Approved v1; no run has occurred.
+**Revision:** v2 (2026-11-03; status only). Approved v1 protocol unchanged. IT1 completed; gate approved 2026-11-03. See [GATE_IT1.md](../../gates/GATE_IT1.md).
 
 IT1 prepares one canonical synthetic inbox-routing training set, a matched primary dev set, and a second dev set with held-out intent phrases. Both dev tracks use the fixed four-choice category task. The held-out test split stays ungenerated until the final iteration.
 

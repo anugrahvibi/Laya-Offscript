@@ -1,6 +1,6 @@
 # IT1 TRD — data generation
 
-**Status:** Approved v1; no generation has run.
+**Revision:** v2 (2026-11-03; status only). Approved v1 protocol unchanged. IT1 completed; gate approved 2026-11-03. See [GATE_IT1.md](../../gates/GATE_IT1.md).
 
 The generator reads the approved task fixture and JSON config. Default mode writes train, matched dev, and held-out-intent dev JSONL plus a manifest; it never writes test. Final-test mode requires the existing bundle and writes only test, preserving clean files and hashes.
 

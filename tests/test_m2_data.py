@@ -1,4 +1,4 @@
-"""Contract and fake-model integration checks for M2; not yet run."""
+"""Contract and fake-model integration checks for the M2 data/evaluation path."""
 import json
 import tempfile
 import unittest
