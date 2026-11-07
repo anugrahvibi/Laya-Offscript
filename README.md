@@ -44,14 +44,11 @@ Because Laya returns typed decisions and probabilities, record both the selected
 
 ## Current state
 
-The local setup pins `laya==0.4.6`. Existing scripts are preserved:
+M0 and M1 recorded clean-model input and format controls. They are not backdoor experiments, but they matter to this project: they show why a later decision change must be separated from effects caused by wording or formatting alone. See [EXP-000](experiments/EXP-000-existing-input-probes/README.md) and [EXP-001](experiments/EXP-001-baseline-format-controls/README.md) for the details.
 
-- `src/quickstart.py` sends three matched message variants—baseline, ORCHID, and BANANA—through the same Choice and Noul questions. It is an exploratory input-sensitivity probe, not a backdoor test.
-- `src/test_router.py` runs five varied customer messages. It is a descriptive example script, not a matched comparison.
+M2 IT1 is complete. It generated and checked the clean training and development data, evaluated the pinned Laya checkpoint, and passed its gate on 2026-11-03. The gate contains the metrics, evidence, and temperature-fallback limitation; affected probabilities are uncalibrated. The final test split remains ungenerated and untouched. See [the IT1 gate](docs/research/m2/gates/GATE_IT1.md).
 
-Both existing scripts were run on 2026-10-17 and captured in [EXP-000](experiments/EXP-000-existing-input-probes/README.md). M1 is now complete in [EXP-001](experiments/EXP-001-baseline-format-controls/README.md): the English checkpoint was pinned to revision `7b928d828b7b0e022f929d9bd2e44165aa270148`, the three matched states were repeated twice, and option labels, option order, and state serialization were varied separately. The repeats exactly reproduced EXP-000. Each format control shifted some probabilities but kept “order tracking” as the selected category. These are clean-checkpoint input-sensitivity results, not evidence of a backdoor. Laya emitted the same temperature warning, so confidence from affected Choice entries is uncalibrated.
-
-M2 IT1 has also completed: clean train and development data were generated and checked, and the pinned Laya checkpoint was evaluated on both development tracks. The IT1 gate was approved on 2026-11-03. No fine-tuning, poisoning, or final-test evaluation has happened yet; see [the M2 gate](docs/research/m2/gates/GATE_IT1.md).
+M2 IT2 v1 was approved on 2026-11-06; execution has not started. It will first verify the training/evaluation code and Colab smoke/resume workflow, then train six clean controls: RLCD and supervised `soft-ce`, each with seeds 17, 42, and 137. Training is planned for Colab, with GPU verification in each session. IT2 has no poisoned training data or final-test access. See the [IT2 plan](docs/research/m2/iterations/it2/README_IT2.md) and [M2 build outline](docs/research/m2/BUILD.md).
 
 ## Research record and versions
 
@@ -61,18 +58,19 @@ Milestone IDs describe research stages, not software releases. Use the Git commi
 
 ## Repository map
 
-- `src/`: Laya probes, M1 controls, and M2 data/evaluation scripts.
-- `tests/`: checks for the M2 data and evaluation pipeline.
+- `src/`: Laya probes, M1 controls, and M2 data, evaluation, and training scaffolding.
+- `tests/`: checks for M2 data and the IT2 training/evaluation workflow; check the IT2 documents for current verification status.
 - `docs/PROJECT_SCOPE.md` and `docs/MILESTONES.md`: project-wide scope and research history.
 - `docs/research/m2/`: M2 workflow, governance, and decision records.
 - `docs/research/m2/iterations/it1/`: IT1 protocol and implementation documents.
+- `docs/research/m2/iterations/it2/`: approved IT2 protocol and implementation documents.
 - `docs/research/m2/gates/`: iteration gate records and template.
 - `configs/`, `fixtures/`, `data/`, and `results/`: M2 configuration, task definition, generated datasets, and outputs, grouped by artifact type.
 - `experiments/`: M0 and M1 experiment index, template, and run records.
 
 ## Setup
 
-Requirements: Python 3.10 or newer, `uv`, and internet access for first-time package/model downloads. This machine uses a CPU-friendly PyTorch build.
+Requirements for local probes: Python 3.10 or newer, `uv`, and internet access for first-time package/model downloads. This project environment selects CPU-only PyTorch; it is for local probes and the IT1 baseline. IT2 fine-tuning is planned through the Colab CLI on a verified cloud GPU. Do not treat an earlier GPU preflight as confirmation that a later session has the same GPU.
 
 ```bash
 uv venv --python 3.14 .venv
@@ -81,7 +79,9 @@ UV_CACHE_DIR=.cache/uv uv pip install --python .venv/bin/python laya
 
 If Python 3.14 is unavailable, use an installed Python 3.12 or 3.13 for the virtual environment. The project configuration selects CPU-only PyTorch.
 
-## Run the existing probes
+## Reproduce the early local probes (optional)
+
+These commands reproduce M0/M1 input-sensitivity controls. They do not train a model or run the M2 poisoning study.
 
 ```bash
 .venv/bin/python src/quickstart.py
